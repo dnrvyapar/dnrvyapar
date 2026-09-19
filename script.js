@@ -29,23 +29,36 @@
 
     if (burger && navLinks) {
         burger.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
+            var active = navLinks.classList.toggle('active');
             burger.classList.toggle('active');
+            burger.setAttribute('aria-expanded', String(active));
         });
         navLinks.querySelectorAll('a').forEach(function(a) {
             a.addEventListener('click', function() {
                 navLinks.classList.remove('active');
                 burger.classList.remove('active');
+                burger.setAttribute('aria-expanded', 'false');
             });
         });
     }
 
-    document.querySelectorAll('.faq-q').forEach(function(btn) {
+    document.querySelectorAll('.faq-q').forEach(function(btn, index) {
+        var answer = btn.parentElement.querySelector('.faq-a');
+        var answerId = 'faq-answer-' + index;
+        if (answer) answer.id = answerId;
+        btn.setAttribute('aria-controls', answerId);
+        btn.setAttribute('aria-expanded', 'false');
         btn.addEventListener('click', function() {
             var item = this.parentElement;
             var open = item.classList.contains('open');
-            document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
-            if (!open) item.classList.add('open');
+            document.querySelectorAll('.faq-item').forEach(function(i) {
+                i.classList.remove('open');
+                i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+            });
+            if (!open) {
+                item.classList.add('open');
+                this.setAttribute('aria-expanded', 'true');
+            }
         });
     });
 
@@ -130,7 +143,10 @@
     }
 
     fetch('https://api.github.com/repos/dongala899/DNRVyaparWeb/releases/latest')
-        .then(function(r) { return r.json(); })
+        .then(function(r) {
+            if (!r.ok) throw new Error('Release request failed');
+            return r.json();
+        })
         .then(function(data) {
             var asset = data.assets && data.assets.find(function(a) { return a.name.endsWith('.exe'); });
             if (asset) {
@@ -150,5 +166,8 @@
                 }
             }
         })
-        .catch(function() {});
+        .catch(function() {
+            var status = document.getElementById('download-status');
+            if (status) status.textContent = 'Could not load the installer automatically. Use the GitHub Releases page to download it.';
+        });
 })();

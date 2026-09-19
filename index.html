@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://dnrvyapar.com/">
     <meta property="og:title" content="DNR Vyapar — Offline GST Billing Software">
     <meta property="og:description" content="Create professional GST invoices, track payments, manage customers — all from your desktop. No internet required. Affordable monthly & yearly plans.">
     <meta property="og:type" content="website">
@@ -29,7 +30,6 @@
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Windows 10, Windows 11",
         "description": "Offline GST billing and invoicing software for Indian small businesses",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
         "author": { "@type": "Organization", "name": "DNR Vyapar" }
     }
     </script>
@@ -58,7 +58,7 @@
             <a href="#faq">FAQ</a>
             <a href="#download" class="nav-cta">Download</a>
         </div>
-        <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+        <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
     </div>
 </nav>
 
@@ -115,7 +115,7 @@
     <div class="wrap">
         <div class="stats-grid">
             <div class="stat-item reveal">
-                <span class="stat-number" data-static="true">5,00+</span>
+                <span class="stat-number" data-static="true">500+</span>
                 <span class="stat-label">Invoices Generated</span>
             </div>
             <div class="stat-item reveal">
@@ -245,7 +245,6 @@
         <div class="shots-scroll" id="shotsScroll">
             <div class="shots-track">
                 <figure class="shot reveal"><div class="win"><div class="win-bar"><span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span><span class="win-title">Dashboard</span></div><img src="screenshot/Main page.jpg" alt="Dashboard" loading="lazy"></div><figcaption>Dashboard with sales, purchases, and tax summary</figcaption></figure>
-                <figure class="shot reveal"><div class="win"><div class="win-bar"><span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span><span class="win-title">Invoice</span></div><img src="screenshot/Invoice screen.jpg" alt="Invoice Creation" loading="lazy"></div><figcaption>Create GST invoices with auto tax calculation</figcaption></figure>
                 <figure class="shot reveal"><div class="win"><div class="win-bar"><span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span><span class="win-title">Quotation</span></div><img src="screenshot/Quotation.jpg" alt="Quotation" loading="lazy"></div><figcaption>Generate and convert quotations to invoices</figcaption></figure>
                 <figure class="shot reveal"><div class="win"><div class="win-bar"><span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span><span class="win-title">Reports</span></div><img src="screenshot/Advance Reports.jpg" alt="Reports" loading="lazy"></div><figcaption>9 advanced reports with Excel and HTML export</figcaption></figure>
                 <figure class="shot reveal"><div class="win"><div class="win-bar"><span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span><span class="win-title">Payments</span></div><img src="screenshot/Pay track.jpg" alt="Payment Tracking" loading="lazy"></div><figcaption>Record payments and track outstanding balances</figcaption></figure>
@@ -396,11 +395,11 @@
         </div>
         <div class="faq-list">
             <div class="faq-item reveal">
-                <button class="faq-q"><span>What does DNR stand for?</span><svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"/></svg></button>
+                <button class="faq-q" aria-expanded="false"><span>What does DNR stand for?</span><svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"/></svg></button>
                 <div class="faq-a"><p>DNR stands for <strong>Digital Net Register</strong>. DNR Vyapar is a desktop GST billing and invoicing application built with Electron for Indian small businesses, freelancers, and service providers. <span id="faq-version"></span></p></div>
             </div>
             <div class="faq-item reveal">
-                <button class="faq-q"><span>Is DNR Vyapar free?</span><svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"/></svg></button>
+                <button class="faq-q" aria-expanded="false"><span>Is DNR Vyapar free?</span><svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"/></svg></button>
                 <div class="faq-a"><p>DNR Vyapar starts with a 15-day free trial on first launch. After the trial, a subscription is required. Choose between monthly or yearly plans — whichever suits your budget. There are two tiers: Standard (1 company) and Pro (2 companies). Yearly plans include a significant discount compared to monthly billing.</p></div>
             </div>
             <div class="faq-item reveal">
@@ -484,13 +483,14 @@
                 <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
                 <div>
                     <h3>Windows (64-bit)</h3>
-                    <p id="dl-info">Version 1.5.1 &middot; Updated July 2026</p>
+                    <p id="dl-info">Latest release &middot; GitHub Releases</p>
                 </div>
             </div>
             <a href="https://github.com/dongala899/DNRVyaparWeb/releases/latest" class="btn btn-accent btn-block btn-lg" id="download-btn">
                 <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 DNR Vyapar (.exe)
             </a>
+            <p class="download-status" id="download-status" role="status" aria-live="polite">Installer link loads from the latest GitHub release.</p>
             <p class="download-sub">Works fully offline &middot; Free 15-day trial &middot; No credit card</p>
         </div>
     </div>

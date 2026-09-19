@@ -566,12 +566,24 @@ h4 { font-size: 1.05rem; }
 .btt:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(255,122,61,0.4); }
 .btt svg { width: 18px; height: 18px; }
 
+:where(a, button):focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+
 /* ─── SCROLL ANIMATIONS ─── */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal:nth-child(2) { transition-delay: 0.06s; }
 .reveal:nth-child(3) { transition-delay: 0.12s; }
 .reveal:nth-child(4) { transition-delay: 0.18s; }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    .reveal { opacity: 1; transform: none; }
+}
+
+@media (scripting: none) {
+    .reveal { opacity: 1; transform: none; }
+}
 
 /* ─── SMALL SCREENS ─── */
 @media (max-width: 480px) {
