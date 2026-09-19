@@ -71,6 +71,64 @@ h4 { font-size: 1.05rem; }
 .link-accent { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .link-accent:hover { color: var(--accent-2); }
 
+/* ─── PROFESSIONAL ENHANCEMENTS ─── */
+.scroll-progress {
+    position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+    background: var(--grad); z-index: 200;
+    box-shadow: 0 0 12px rgba(255,122,61,0.6);
+}
+.grain {
+    position: fixed; inset: 0; z-index: 1; pointer-events: none;
+    opacity: 0.04; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Product window frame */
+.win {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-strong);
+    background: #0e0e18;
+    box-shadow: var(--shadow);
+}
+.win-bar {
+    display: flex; align-items: center; gap: 0.5rem;
+    padding: 0.65rem 1rem;
+    background: rgba(255,255,255,0.04);
+    border-bottom: 1px solid var(--border);
+}
+.win-dot { width: 11px; height: 11px; border-radius: 50%; background: #3a3a4a; flex-shrink: 0; }
+.win-dot:nth-child(1) { background: #ff5f57; }
+.win-dot:nth-child(2) { background: #febc2e; }
+.win-dot:nth-child(3) { background: #28c840; }
+.win-title { margin-left: 0.7rem; font-size: 0.78rem; color: var(--ink-muted); font-weight: 500; letter-spacing: 0.01em; }
+.win img { display: block; width: 100%; }
+
+/* Hero rating micro-badge */
+.hero-rating { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 2rem; font-size: 0.85rem; color: var(--ink-muted); }
+.hero-rating .stars { color: var(--accent-2); letter-spacing: 2px; font-size: 0.95rem; }
+.hero-rating strong { color: var(--ink); }
+
+/* Stat cards */
+.stat-item {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 1.6rem 1rem;
+    transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.stat-item:hover { border-color: var(--border-strong); transform: translateY(-3px); }
+
+/* Comparison VS badge */
+.compare-grid { position: relative; }
+.compare-vs {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--bg-2); border: 1px solid var(--border-strong);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--head); font-weight: 800; font-size: 0.9rem; color: var(--ink-muted);
+    z-index: 2; box-shadow: var(--shadow);
+}
+@media (max-width: 700px) { .compare-vs { display: none; } }
+
 /* ─── NAV ─── */
 .nav {
     position: fixed; inset: 0 0 auto 0; z-index: 100;
@@ -171,12 +229,8 @@ h4 { font-size: 1.05rem; }
 
 .hero-visual { position: relative; display: flex; justify-content: center; }
 .hero-mockup { position: relative; width: 100%; max-width: 460px; }
-.hero-mockup img {
-    width: 100%; border-radius: var(--radius-lg);
-    border: 1px solid var(--border-strong);
-    box-shadow: var(--shadow-lg);
-    position: relative; z-index: 1;
-}
+.hero-mockup .win { position: relative; z-index: 1; box-shadow: var(--shadow-lg); }
+.hero-mockup .win img { border: none; border-radius: 0; box-shadow: none; }
 .mockup-glow {
     position: absolute; inset: -8% -8% -8% -8%;
     background: var(--grad-cool);
@@ -326,14 +380,13 @@ h4 { font-size: 1.05rem; }
 .shots-track { display: flex; gap: 1.5rem; padding: 0.5rem; width: max-content; }
 .shot {
     flex: 0 0 auto; width: 360px; scroll-snap-align: center;
-    border-radius: var(--radius-lg); overflow: hidden;
-    background: var(--surface); box-shadow: var(--shadow);
-    border: 1px solid var(--border);
+    background: var(--surface); border-radius: var(--radius-lg);
+    border: 1px solid var(--border); padding: 0.6rem 0.6rem 0;
     transition: transform 0.4s var(--ease), border-color 0.4s var(--ease);
 }
 .shot:hover { transform: translateY(-6px); border-color: var(--border-strong); }
-.shot img { width: 100%; height: auto; }
-.shot figcaption { padding: 1rem 1.25rem; font-size: 0.85rem; color: var(--ink-soft); font-weight: 500; }
+.shot .win { border: none; box-shadow: none; border-radius: calc(var(--radius-lg) - 4px); }
+.shot figcaption { padding: 1rem 0.65rem; font-size: 0.85rem; color: var(--ink-soft); font-weight: 500; }
 @media (max-width: 560px) { .shot { width: 280px; } }
 
 /* ─── HOW IT WORKS ─── */

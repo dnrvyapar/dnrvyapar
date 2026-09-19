@@ -5,11 +5,17 @@
     var btt = document.getElementById('btt');
     var burger = document.getElementById('navBurger');
     var navLinks = document.getElementById('navLinks');
+    var progress = document.getElementById('scrollProgress');
 
     function onScroll() {
         var y = window.pageYOffset || document.documentElement.scrollTop;
         if (nav) nav.classList.toggle('scrolled', y > 50);
         if (btt) btt.classList.toggle('visible', y > 400);
+        if (progress) {
+            var doc = document.documentElement;
+            var max = (doc.scrollHeight - doc.clientHeight) || 1;
+            progress.style.width = (y / max * 100) + '%';
+        }
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();

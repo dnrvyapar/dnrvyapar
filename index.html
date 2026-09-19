@@ -36,6 +36,9 @@
 </head>
 <body>
 
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="grain" aria-hidden="true"></div>
+
 <button class="btt" id="btt" aria-label="Back to top">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18,15 12,9 6,15"/></svg>
 </button>
@@ -82,6 +85,10 @@
                 </a>
                 <a href="#features" class="btn btn-ghost btn-xl">Explore Features</a>
             </div>
+            <div class="hero-rating reveal">
+                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span>4.8 average &middot; Trusted by Indian businesses</span>
+            </div>
             <div class="hero-proof reveal">
                 <div class="hero-proof-item"><strong>Monthly &amp; Yearly</strong><span>Flexible Plans</span></div>
                 <div class="hero-proof-item"><strong>100% Offline</strong><span>No Internet Needed</span></div>
@@ -90,7 +97,13 @@
         </div>
         <div class="hero-visual reveal">
             <div class="hero-mockup">
-                <img src="screenshot/splash screen.jpg" alt="DNR Vyapar Splash Screen" loading="lazy">
+                <div class="win">
+                    <div class="win-bar">
+                        <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
+                        <span class="win-title">DNR Vyapar — Application</span>
+                    </div>
+                    <img src="screenshot/splash screen.jpg" alt="DNR Vyapar Splash Screen" loading="lazy">
+                </div>
                 <div class="mockup-glow"></div>
             </div>
         </div>
@@ -231,14 +244,14 @@
         </div>
         <div class="shots-scroll" id="shotsScroll">
             <div class="shots-track">
-                <figure class="shot reveal"><img src="screenshot/Main page.jpg" alt="Dashboard" loading="lazy"><figcaption>Dashboard with sales, purchases, and tax summary</figcaption></figure>
-                <figure class="shot reveal"><img src="screenshot/Invoice screen.jpg" alt="Invoice Creation" loading="lazy"><figcaption>Create GST invoices with auto tax calculation</figcaption></figure>
-                <figure class="shot reveal"><img src="screenshot/Quotation.jpg" alt="Quotation" loading="lazy"><figcaption>Generate and convert quotations to invoices</figcaption></figure>
-                <figure class="shot reveal"><img src="screenshot/Advance Reports.jpg" alt="Reports" loading="lazy"><figcaption>9 advanced reports with Excel and HTML export</figcaption></figure>
-                <figure class="shot reveal"><img src="screenshot/Pay track.jpg" alt="Payment Tracking" loading="lazy"><figcaption>Record payments and track outstanding balances</figcaption></figure>
-                <figure class="shot reveal"><img src="screenshot/Initial company setup.jpg" alt="Company Setup" loading="lazy"><figcaption>Company profile with GSTIN, logo, and signature</figcaption></figure>
-                <figure class="shot reveal"><img src="screenshot/Initial Admin account.jpg" alt="Admin Setup" loading="lazy"><figcaption>Initial admin account and security setup</figcaption></figure>
-                <figure class="shot reveal"><img src="screenshot/License.jpg" alt="License Management" loading="lazy"><figcaption>Simple license activation and management</figcaption></figure>
+                <figure class="shot reveal"><div class="win"><div class="win-bar"><span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span><span class="win-title">Dashboard</span></div><img src="screenshot/Main page.jpg" alt="Dashboard" loading="lazy"></div><figcaption>Dashboard with sales, purchases, and tax summary</figcaption></figure>
+                <figure class="shot reveal"><div class="win"><div class="win-bar"><span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span><span class="win-title">Invoice</span></div><img src="screenshot/Invoice screen.jpg" alt="Invoice Creation" loading="lazy"></div><figcaption>Create GST invoices with auto tax calculation</figcaption></figure>
+                <figure class="shot reveal"><div class="win"><div class="win-bar"><span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span><span class="win-title">Quotation</span></div><img src="screenshot/Quotation.jpg" alt="Quotation" loading="lazy"></div><figcaption>Generate and convert quotations to invoices</figcaption></figure>
+                <figure class="shot reveal"><div class="win"><div class="win-bar"><span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span><span class="win-title">Reports</span></div><img src="screenshot/Advance Reports.jpg" alt="Reports" loading="lazy"></div><figcaption>9 advanced reports with Excel and HTML export</figcaption></figure>
+                <figure class="shot reveal"><div class="win"><div class="win-bar"><span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span><span class="win-title">Payments</span></div><img src="screenshot/Pay track.jpg" alt="Payment Tracking" loading="lazy"></div><figcaption>Record payments and track outstanding balances</figcaption></figure>
+                <figure class="shot reveal"><div class="win"><div class="win-bar"><span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span><span class="win-title">Company Setup</span></div><img src="screenshot/Initial company setup.jpg" alt="Company Setup" loading="lazy"></div><figcaption>Company profile with GSTIN, logo, and signature</figcaption></figure>
+                <figure class="shot reveal"><div class="win"><div class="win-bar"><span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span><span class="win-title">Admin</span></div><img src="screenshot/Initial Admin account.jpg" alt="Admin Setup" loading="lazy"></div><figcaption>Initial admin account and security setup</figcaption></figure>
+                <figure class="shot reveal"><div class="win"><div class="win-bar"><span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span><span class="win-title">License</span></div><img src="screenshot/License.jpg" alt="License Management" loading="lazy"></div><figcaption>Simple license activation and management</figcaption></figure>
             </div>
         </div>
     </div>
@@ -342,6 +355,7 @@
             <p>Built differently for Indian businesses that value simplicity and privacy</p>
         </div>
         <div class="compare-grid">
+            <div class="compare-vs">VS</div>
             <div class="compare-card compare-bad reveal">
                 <h3>Other Billing Software</h3>
                 <ul>
@@ -475,7 +489,7 @@
             </div>
             <a href="https://github.com/dongala899/DNRVyaparWeb/releases/latest" class="btn btn-accent btn-block btn-lg" id="download-btn">
                 <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download Installer (.exe)
+                DNR Vyapar (.exe)
             </a>
             <p class="download-sub">Works fully offline &middot; Free 15-day trial &middot; No credit card</p>
         </div>
