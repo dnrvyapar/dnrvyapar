@@ -72,12 +72,13 @@
     </div>
     <div class="wrap">
         <div class="hero-content">
-            <div class="hero-badge reveal">
-                <span class="badge-dot"></span>
-                New Release Available
+            <div class="hero-badge offer-badge reveal">
+                <span class="badge-dot offer-dot"></span>
+                <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                15-day free trial + <span class="offer-highlight">2 months FREE</span> after trial · <span class="offer-limited">Limited time</span>
             </div>
             <h1 class="reveal">GST Billing <span class="gradient-text">Without Limits</span></h1>
-            <p class="lead reveal"><strong>DNR Vyapar</strong> — <em>Vyapar Made Easy</em>. Create professional GST invoices, track payments, manage customers, and file returns — all from your desktop. No internet required. Affordable monthly & yearly plans.</p>
+            <p class="lead reveal"><strong>DNR Vyapar</strong> — <em>Vyapar Made Easy</em>. Create professional GST invoices, track payments, manage customers, and file returns — all from your desktop. No internet required. <span class="offer-inline">Start with a free 15-day trial, then get <strong>2 months FREE</strong> after trial — limited time only.</span></p>
             <div class="hero-actions reveal">
                 <a href="#download" class="btn btn-accent btn-xl">
                     <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -306,6 +307,10 @@
         </div>
         <div class="pricing-grid">
             <div class="price-card reveal">
+                <div class="offer-ribbon offer-ribbon-soft">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                    2 MONTHS FREE
+                </div>
                 <div class="price-header">
                     <h3>Standard</h3>
                     <p>For solo entrepreneurs</p>
@@ -324,6 +329,10 @@
             </div>
             <div class="price-card popular reveal">
                 <div class="popular-badge">Most Popular</div>
+                <div class="offer-ribbon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                    2 MONTHS FREE
+                </div>
                 <div class="price-header">
                     <h3>Pro</h3>
                     <p>For growing businesses</p>
@@ -341,7 +350,7 @@
                 <a href="#download" class="btn btn-accent btn-block">Start Free Trial</a>
             </div>
         </div>
-        <p class="pricing-note reveal">Yearly plans available with significant savings. Cancel anytime, no questions asked.</p>
+        <p class="pricing-note reveal">Limited-time offer: 15-day free trial, then <strong>2 months FREE</strong> on any plan. Save up to 2 months — no credit card during trial. Cancel anytime.</p>
     </div>
 </section>
 
@@ -486,11 +495,15 @@
                     <p id="dl-info">Latest release &middot; GitHub Releases</p>
                 </div>
             </div>
+            <div class="pricing-offer-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                <span class="offer-tag-free">FREE</span> 15-day trial <span class="offer-arrow">→</span> <span class="offer-tag-free">2 months FREE</span> after trial · <span class="offer-limited">Limited time</span>
+            </div>
             <a href="https://github.com/dongala899/DNRVyaparWeb/releases/latest" class="btn btn-accent btn-block btn-lg" id="download-btn">
                 <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 DNR Vyapar (.exe)
             </a>
-            <p class="download-status" id="download-status" role="status" aria-live="polite">Installer link loads from the latest GitHub release.</p>
+            <p class="download-status" id="download-status" role="status" aria-live="polite"></p>
             <p class="download-sub">Works fully offline &middot; Free 15-day trial &middot; No credit card</p>
         </div>
     </div>
