@@ -168,6 +168,6 @@
         })
         .catch(function() {
             var status = document.getElementById('download-status');
-            if (status) status.textContent = 'Could not load the installer automatically. Use the GitHub Releases page to download it.';
+            if (status) status.textContent = 'Could not load release details. Use the download button above to get the latest installer.';
         });
 })();
