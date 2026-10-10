@@ -142,7 +142,7 @@
         }, { passive: false });
     }
 
-    fetch('https://api.github.com/repos/dongala899/DNRVyaparWeb/releases/latest')
+    fetch('https://api.github.com/repos/dnrvyapar/dnrvyapar/releases/latest')
         .then(function(r) {
             if (!r.ok) throw new Error('Release request failed');
             return r.json();
